@@ -21,25 +21,25 @@ function setup() {
 	chain = new Chain(launcher.body, {x: 150, y: 350});
 	platform = new Ground(500, 400, 250, 10, "green");
 
-	rect1 = new Rect(470, 350, "lightblue");
-	rect2 = new Rect(440, 350, "lightblue");
-	rect3 = new Rect(410, 350, "lightblue");
-	rect4 = new Rect(500, 350, "lightblue");
-	rect5 = new Rect(530, 350, "lightblue");
-	rect6 = new Rect(560, 350, "lightblue");
-	rect7 = new Rect(590, 350, "lightblue");
+	rect1 = new Rect1(470, 390, "lightblue");
+	rect2 = new Rect1(440, 390, "lightblue");
+	rect3 = new Rect1(410, 390, "lightblue");
+	rect4 = new Rect1(500, 390, "lightblue");
+	rect5 = new Rect1(530, 390, "lightblue");
+	rect6 = new Rect1(560, 390, "lightblue");
+	rect7 = new Rect1(590, 390, "lightblue");
 	
-	rect8 = new Rect(440, 300, "lightgreen");
-	rect9 = new Rect(560, 300, "lightgreen");
-	rect10 = new Rect(470, 300, "lightgreen");
-	rect11 = new Rect(500, 300, "lightgreen");
-	rect12 = new Rect(530, 300, "lightgreen");
+	rect8 = new Rect2(440, 340, "lightgreen");
+	rect9 = new Rect2(560, 340, "lightgreen");
+	rect10 = new Rect2(470, 340, "lightgreen");
+	rect11 = new Rect2(500, 340, "lightgreen");
+	rect12 = new Rect2(530, 340, "lightgreen");
 
-	rect13 = new Rect(470, 250, "pink");
-	rect14 = new Rect(500, 250, "pink");
-	rect15 = new Rect(530, 250, "pink");
+	rect13 = new Rect3(470, 290, "pink");
+	rect14 = new Rect3(500, 290, "pink");
+	rect15 = new Rect3(530, 290, "pink");
 
-	rect16 = new Rect(500, 200, "grey");
+	rect16 = new Rect4(500, 240, "grey");
 
 	Engine.run(engine);
   
