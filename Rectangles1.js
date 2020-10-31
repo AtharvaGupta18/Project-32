@@ -13,11 +13,20 @@ class Rect1 {
         this.a = a;
         this.b = b;
         this.c = c;
-        this.visiblity = 255;
+        this.visibility = 255;
 
         World.add(world, this.body);
 
     }
+
+    score(){
+
+        if (this.visibility < 0 && this.visibility >= 105) {
+            score+1;
+        }
+
+    }
+
     display(){
 
         if(this.body.speed < 4){
@@ -34,20 +43,20 @@ class Rect1 {
 
             World.remove(world, this.body);
             push();
-            this.visiblity = this.visiblity - 5;
-            tint(255, this.visiblity);
+            this.visibility = this.visibility - 5;
+            tint(255, this.visibility);
             image(this.image, this.body.position.x, this.body.position.y);
             pop();
             
         }
-                
-
-        // var pos = this.body.position;
-        // rectMode(CENTER);
-        // strokeWeight(2);
-        // stroke(this.a, this.b, this.c)
-        // fill(this.color);
-        // rect(pos.x, pos.y, 30, 50);
         
+        rect1.score();
+	    rect2.score();
+	    rect3.score();
+	    rect4.score();
+	    rect5.score();
+	    rect6.score();
+        rect7.score();
+    
     }
 }

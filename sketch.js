@@ -4,6 +4,22 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 const Constraint = Matter.Constraint;
 
+var backgroundImg = 0;
+
+var score = 0;
+var text1;
+var text2;
+
+var rect1, rect2, rect3, rect4, rect5,
+ 	rect6, rect7, rect8, rect9, rect10, 
+	rect11, rect12, rect13, rect14, 
+	rect15, rect16;
+
+function preload(){
+
+	getBackgroundImg();
+
+}
 function setup() {
 	createCanvas(850, 600);
 
@@ -48,8 +64,8 @@ function setup() {
 
 function draw() {
   	rectMode(CENTER);
-	background(0);
-	  
+	background(backgroundImg);
+
 	ground.display();
 	g1.display();
 	g2.display();
@@ -76,7 +92,10 @@ function draw() {
 	rect15.display();
 
 	rect16.display();
- 
+
+	text("Press space key to get a new chance!!!", 600, 550);
+	text(" Score : "+score, 20, 50);
+
 }
 
 function mouseDragged(){
@@ -98,4 +117,38 @@ function keyPressed(){
 
 	}
 
+}
+
+async function getBackgroundImg(){
+    var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata"); 
+    var responseJSON = await response.json(); 
+    var datetime = responseJSON.datetime; 
+    var hour = datetime.slice(11,13);
+
+    if(hour >= 05 && hour < 08){
+
+        bg = "Images/Sunrise.png"; 
+
+    } 
+
+    else if(hour >= 08 && hour < 17) {
+		
+		bg = "Images/Afternoon.png";
+
+	}
+	
+	else if(hour >= 17 && hour < 20){
+
+		bg = "Images/Evening.png";
+
+	}
+
+	else if(hour >= 20 && hour < 05){
+
+		bg = "Images/Night.png";
+
+	}
+		
+	
+		backgroundImg = loadImage(bg); 
 }
